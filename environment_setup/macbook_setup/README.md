@@ -5,12 +5,16 @@
 
 to be completed
 
+Installs and configures the following tools :
+* terminal tools : iterm2, zsh, fzf
+* coding tools: anaconda, python, spark, VSCode
+* other : firefox
+
 ### Installation
 
 to be completed
 
 Launch this command in a terminal:
-https://raw.githubusercontent.com/Capgemini-Invent-France/starter-kit/main/environment_setup/macbook_setup/
 ```
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Capgemini-Invent-France/starter-kit/main/environment_setup/macbook_setup/install.sh)"
 ```
