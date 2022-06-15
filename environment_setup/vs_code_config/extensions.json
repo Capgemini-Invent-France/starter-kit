@@ -1,0 +1,262 @@
+[
+  {
+    "metadata": {
+      "id": "2d6fea35-f68e-461d-9b7b-5cd05be99451",
+      "publisherId": "njpwerner.autodocstring",
+      "publisherDisplayName": "njpwerner"
+    },
+    "name": "autodocstring",
+    "publisher": "njpwerner",
+    "version": "0.5.4"
+  },
+  {
+    "metadata": {
+      "id": "7a0110bb-231a-4598-aa1b-0769ea46d28b",
+      "publisherId": "aaron-bond.better-comments",
+      "publisherDisplayName": "aaron-bond"
+    },
+    "name": "better-comments",
+    "publisher": "aaron-bond",
+    "version": "2.1.0"
+  },
+  {
+    "metadata": {
+      "id": "84a37ccf-d242-41e2-b631-93016a3882df",
+      "publisherId": "sashaweiss.block-travel",
+      "publisherDisplayName": "sashaweiss"
+    },
+    "name": "block-travel",
+    "publisher": "sashaweiss",
+    "version": "0.0.2"
+  },
+  {
+    "metadata": {
+      "id": "e337c67b-55c2-4fef-8949-eb260e7fb7fd",
+      "publisherId": "Shan.code-settings-sync",
+      "publisherDisplayName": "Shan"
+    },
+    "name": "code-settings-sync",
+    "publisher": "Shan",
+    "version": "3.4.3"
+  },
+  {
+    "metadata": {
+      "id": "f6dbd813-b0a0-42c1-90ea-10dde9d925a7",
+      "publisherId": "streetsidesoftware.code-spell-checker",
+      "publisherDisplayName": "streetsidesoftware"
+    },
+    "name": "code-spell-checker",
+    "publisher": "streetsidesoftware",
+    "version": "2.0.10"
+  },
+  {
+    "metadata": {
+      "id": "7b69248c-488a-4a74-ae29-56822156726f",
+      "publisherId": "rid9.datetime",
+      "publisherDisplayName": "rid9"
+    },
+    "name": "datetime",
+    "publisher": "rid9",
+    "version": "2.0.3"
+  },
+  {
+    "metadata": {
+      "id": "4de763bd-505d-4978-9575-2b7696ecf94e",
+      "publisherId": "eamodio.gitlens",
+      "publisherDisplayName": "eamodio"
+    },
+    "name": "gitlens",
+    "publisher": "eamodio",
+    "version": "11.6.1"
+  },
+  {
+    "metadata": {
+      "id": "6c2f1801-1e7f-45b2-9b5c-7782f1e076e8",
+      "publisherId": "ms-toolsai.jupyter",
+      "publisherDisplayName": "ms-toolsai"
+    },
+    "name": "jupyter",
+    "publisher": "ms-toolsai",
+    "version": "2021.8.2041215044"
+  },
+  {
+    "metadata": {
+      "id": "9f6dc8db-620c-4844-b8c5-e74914f1be27",
+      "publisherId": "ms-toolsai.jupyter-keymap",
+      "publisherDisplayName": "ms-toolsai"
+    },
+    "name": "jupyter-keymap",
+    "publisher": "ms-toolsai",
+    "version": "1.0.0"
+  },
+  {
+    "metadata": {
+      "id": "b15c72f8-d5fe-421a-a4f7-27ed9f6addbf",
+      "publisherId": "ms-toolsai.jupyter-renderers",
+      "publisherDisplayName": "ms-toolsai"
+    },
+    "name": "jupyter-renderers",
+    "publisher": "ms-toolsai",
+    "version": "1.0.3"
+  },
+  {
+    "metadata": {
+      "id": "98790d67-10fa-497c-9113-f6c7489207b2",
+      "publisherId": "yzhang.markdown-all-in-one",
+      "publisherDisplayName": "yzhang"
+    },
+    "name": "markdown-all-in-one",
+    "publisher": "yzhang",
+    "version": "3.4.0"
+  },
+  {
+    "metadata": {
+      "id": "3b1db1fc-c7f7-4bd6-9fa4-b499dfa99a8a",
+      "publisherId": "shd101wyy.markdown-preview-enhanced",
+      "publisherDisplayName": "shd101wyy"
+    },
+    "name": "markdown-preview-enhanced",
+    "publisher": "shd101wyy",
+    "version": "0.6.0"
+  },
+  {
+    "metadata": {
+      "id": "5db78037-f674-459f-a236-db622c427c5b",
+      "publisherId": "PKief.material-icon-theme",
+      "publisherDisplayName": "PKief"
+    },
+    "name": "material-icon-theme",
+    "publisher": "PKief",
+    "version": "4.10.0"
+  },
+  {
+    "metadata": {
+      "id": "26a529c9-2654-4b95-a63f-02f6a52429e6",
+      "publisherId": "zhuangtongfa.material-theme",
+      "publisherDisplayName": "zhuangtongfa"
+    },
+    "name": "material-theme",
+    "publisher": "zhuangtongfa",
+    "version": "3.13.2"
+  },
+  {
+    "metadata": {
+      "id": "b06b65b2-6ea9-4045-b166-54aa63205261",
+      "publisherId": "junstyle.php-cs-fixer",
+      "publisherDisplayName": "junstyle"
+    },
+    "name": "php-cs-fixer",
+    "publisher": "junstyle",
+    "version": "0.2.8"
+  },
+  {
+    "metadata": {
+      "id": "f1f59ae4-9318-4f3c-a9b5-81b2eaa5f8a5",
+      "publisherId": "ms-python.python",
+      "publisherDisplayName": "ms-python"
+    },
+    "name": "python",
+    "publisher": "ms-python",
+    "version": "2021.10.1336267007"
+  },
+  {
+    "metadata": {
+      "id": "2f5dd8cb-d251-4d70-abfe-ddebcb077483",
+      "publisherId": "octref.vetur",
+      "publisherDisplayName": "octref"
+    },
+    "name": "vetur",
+    "publisher": "octref",
+    "version": "0.35.0"
+  },
+  {
+    "metadata": {
+      "id": "d4b06bd6-36a0-469f-be55-c0a73413b688",
+      "publisherId": "rvest.vs-code-prettier-eslint",
+      "publisherDisplayName": "rvest"
+    },
+    "name": "vs-code-prettier-eslint",
+    "publisher": "rvest",
+    "version": "3.0.4"
+  },
+  {
+    "metadata": {
+      "id": "484d897a-6711-403c-ab54-a96f12be5833",
+      "publisherId": "Equinusocio.vsc-community-material-theme",
+      "publisherDisplayName": "Equinusocio"
+    },
+    "name": "vsc-community-material-theme",
+    "publisher": "Equinusocio",
+    "version": "1.4.2"
+  },
+  {
+    "metadata": {
+      "id": "dffaf5a1-2219-434b-9d87-cb586fd59260",
+      "publisherId": "Equinusocio.vsc-material-theme",
+      "publisherDisplayName": "Equinusocio"
+    },
+    "name": "vsc-material-theme",
+    "publisher": "Equinusocio",
+    "version": "33.2.0"
+  },
+  {
+    "metadata": {
+      "id": "8c609a4f-268a-41fb-8fe6-b6fcd95e8113",
+      "publisherId": "equinusocio.vsc-material-theme-icons",
+      "publisherDisplayName": "equinusocio"
+    },
+    "name": "vsc-material-theme-icons",
+    "publisher": "equinusocio",
+    "version": "1.2.2"
+  },
+  {
+    "metadata": {
+      "id": "3f770365-3682-44ee-a63e-5ef1b16c74d2",
+      "publisherId": "aeschli.vscode-css-formatter",
+      "publisherDisplayName": "aeschli"
+    },
+    "name": "vscode-css-formatter",
+    "publisher": "aeschli",
+    "version": "1.0.1"
+  },
+  {
+    "metadata": {
+      "id": "9a97436d-76aa-479c-8ae9-db2f400a7b04",
+      "publisherId": "ahmadalli.vscode-nginx-conf",
+      "publisherDisplayName": "ahmadalli"
+    },
+    "name": "vscode-nginx-conf",
+    "publisher": "ahmadalli",
+    "version": "0.1.3"
+  },
+  {
+    "metadata": {
+      "id": "364d2426-116a-433a-a5d8-a5098dc3afbd",
+      "publisherId": "ms-python.vscode-pylance",
+      "publisherDisplayName": "ms-python"
+    },
+    "name": "vscode-pylance",
+    "publisher": "ms-python",
+    "version": "2021.10.1"
+  },
+  {
+    "metadata": {
+      "id": "ac70a31d-d9ab-417b-b259-baf7cd9d6cb0",
+      "publisherId": "adpyke.vscode-sql-formatter",
+      "publisherDisplayName": "adpyke"
+    },
+    "name": "vscode-sql-formatter",
+    "publisher": "adpyke",
+    "version": "1.4.4"
+  },
+  {
+    "metadata": {
+      "id": "0661e679-8a32-433e-baeb-8980f53edb55",
+      "publisherId": "fabiospampinato.vscode-todo-plus",
+      "publisherDisplayName": "fabiospampinato"
+    },
+    "name": "vscode-todo-plus",
+    "publisher": "fabiospampinato",
+    "version": "4.18.4"
+  }
+]
