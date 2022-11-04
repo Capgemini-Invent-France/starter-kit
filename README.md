@@ -20,4 +20,3 @@ future open tools / project at very early stage.
 
 - Feedbacks on experienced setups
 - Typical configurations to work with Docker, K8S, Terraform, etc.
-
