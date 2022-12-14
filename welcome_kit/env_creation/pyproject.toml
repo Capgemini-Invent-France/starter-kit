@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "welcome_kit"
+version = "0.1.0"
+description = "This package is to introduce how poetry works"
+authors = ["pierre_lavieille <pierre.lavieille@capgemini.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^1.5.2"
+numpy = "^1.23.5"
+matplotlib = "^3.6.2"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
