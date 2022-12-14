@@ -1,38 +1,13 @@
-# -*- coding: utf-8 -*-
-
 ################## Importing libraries ####################
 import os
 import sys
 
-# path = os.path.join(os.getcwd(), "welcome\predicting-readmission\src")
-# print(path)
-
-sys.path.insert(0, "Loading/")
-sys.path.insert(0, "Preprocessing/")
-sys.path.insert(0, "Modeling/")
-sys.path.insert(0, "Evaluation/")
-sys.path.insert(0, "Interpretability/")
-sys.path.insert(0, "Utils/")
-
-from Loading import loading
-from Preprocessing import preprocessing
-from Modeling import modeling
-from Evaluation import evaluation
-from Interpretability import interpretability
-from Utils import utils as u
-
-# sys.path.insert(0, os.path.join(path, "Preprocessing/"))
-# sys.path.insert(0, os.path.join(path, "Modeling/"))
-# sys.path.insert(0, os.path.join(path, "Evaluation/"))
-# sys.path.insert(0, os.path.join(path, "Interpretability/"))
-# sys.path.insert(0, os.path.join(path, "Utils/"))
-
-# import src.Loading.loading as loading
-# import src.Preprocessing.preprocessing as preprocessing
-# import src.Modeling.modeling as modeling
-# import src.Evaluation.evaluation as evaluation
-# import src.Interpretability.interpretability as interpretability
-# import src.Utils.utils as u
+from src.Loading import loading
+from src.Preprocessing import preprocessing
+from src.Modeling import modeling
+from src.Evaluation import evaluation
+from src.Interpretability import interpretability
+from src.Utils import utils as u
 
 import argparse
 import json
@@ -108,10 +83,20 @@ def main(logger, step_list, NB_STEP_TOT, path_conf="../conf/conf.json"):
         df = loading.read_csv_from_name(conf)
 
         # Preprocessing of the selected dataset
-        df_preprocessed = preprocessing.main_preprocessing_from_name(df, conf)
+        (
+            df_preprocessed,
+            X_columns,
+            y_column,
+            encoding_dict,
+        ) = preprocessing.main_preprocessing_from_name(df, conf)
 
         # Writting of the preprocessed dataset
-        loading.write_preprocessed_csv_from_name(df_preprocessed, conf, 'data_preprocessed.csv')
+        loading.write_preprocessed_csv_from_name(
+            df_preprocessed, conf, "data_preprocessed.csv"
+        )
+
+        # Writting the encoding dictionnary
+        loading.write_dict_json_from_name(encoding_dict, conf, "encoding_dict.json")
 
         logger.debug("End of step 1 ")
 
@@ -119,19 +104,24 @@ def main(logger, step_list, NB_STEP_TOT, path_conf="../conf/conf.json"):
 
         logger.debug(" Beginning of step 2 - Loading Preprocessed ")
         # Loading of the preprocessed dataset
-        df_preprocessed = loading.load_preprocessed_csv_from_name(conf)
+        df_preprocessed = loading.load_preprocessed_csv_from_name(
+            conf, "data_preprocessed.csv"
+        )
         # Basic Splitting between train and test
         y_column = u.get_y_column_from_conf(conf)
         X_columns = [x for x in df_preprocessed.columns if x != y_column]
+        # Basic Splitting between train and test
         X_train, X_test, y_train, y_test = preprocessing.basic_split(
-            df_preprocessed, 0.25, X_columns, y_column, seed=seed
+            df_preprocessed, 0.25, X_columns, y_column
         )
 
         logger.debug(" End of step 2 ")
 
     if (step == 3) or (3 in step_list):
         if 2 not in step_list:  # Step 2 must be launched with step 3
-            df_preprocessed = loading.load_preprocessed_csv_from_name(conf)
+            df_preprocessed = loading.load_preprocessed_csv_from_name(
+                conf, "data_preprocessed.csv"
+            )
             # Basic Splitting between train and test
             y_column = u.get_y_column_from_conf(conf)
             X_columns = [x for x in df_preprocessed.columns if x != y_column]
@@ -149,7 +139,9 @@ def main(logger, step_list, NB_STEP_TOT, path_conf="../conf/conf.json"):
 
     if (step == 4) or (4 in step_list):
         if 2 not in step_list:  # Step 2 must be launched with step 4
-            df_preprocessed = loading.load_preprocessed_csv_from_name(conf)
+            df_preprocessed = loading.load_preprocessed_csv_from_name(
+                conf, "data_preprocessed.csv"
+            )
             # Basic Splitting between train and test
             y_column = u.get_y_column_from_conf(conf)
             X_columns = [x for x in df_preprocessed.columns if x != y_column]
@@ -163,15 +155,15 @@ def main(logger, step_list, NB_STEP_TOT, path_conf="../conf/conf.json"):
         clf = u.load_model(conf)
 
         # Computing metrics
-        dict_metrics = evaluation.main_evaluation(
-            clf, X_train, y_train, X_test, y_test, conf
-        )
+        dict_metrics = evaluation.main_evaluation(clf, X_test, y_test, conf)
 
         logger.debug("End of step 4 ")
 
     if (step == 5) or (5 in step_list):
         if 2 not in step_list:  # Step 2 must be launched with step 5
-            df_preprocessed = loading.load_preprocessed_csv_from_name(conf)
+            df_preprocessed = loading.load_preprocessed_csv_from_name(
+                conf, "data_preprocessed.csv"
+            )
             # Basic Splitting between train and test
             y_column = u.get_y_column_from_conf(conf)
             X_columns = [x for x in df_preprocessed.columns if x != y_column]
@@ -184,12 +176,22 @@ def main(logger, step_list, NB_STEP_TOT, path_conf="../conf/conf.json"):
         # Loading of the model
         clf = u.load_model(conf)
 
+        # Computing permutation importance
+        interpretability.permutation_features_importance(conf, clf, X_train, y_train)
+
         # Computing the shap analysis
         shap_analysis = interpretability.shap_analysis(clf, X_test, y_test, conf)
+        ## Variable Importance graphic
+        shap_analysis.features_importance()
+        ## Features importance + effect of the features according to their value
+        shap_analysis.summary_plot()
+
         # Initialize the DICE class
         dice_interpretability = interpretability.dice_interpretability(
             clf, X_test, y_test, conf
         )
+        ##Generate counterfactuals for a given input point
+        dice_interpretability.global_interpretability(n=1000)
 
         logger.debug("End of step 5 ")
 

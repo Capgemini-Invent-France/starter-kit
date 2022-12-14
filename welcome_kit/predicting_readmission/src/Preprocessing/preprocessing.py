@@ -4,7 +4,6 @@ import logging
 
 logger = logging.getLogger("main_logger")
 
-import utils as u
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import OrdinalEncoder
@@ -151,7 +150,7 @@ def preprocessing_for_diabetic(df, conf):
 
     logger.debug("Selection of X and Y")
     # returning columns for train test split
-    y_column = u.get_y_column_from_conf(conf)
+    y_column = get_y_column_from_conf(conf)
     X_columns = [x for x in df_preprocessed.columns if x != y_column]
 
     logger.debug("Verification of float and na values")
@@ -220,3 +219,13 @@ def basic_split(df, size_of_test, X_columns, y_column):
         df[X_columns], df[y_column], test_size=size_of_test
     )
     return X_train, X_test, y_train, y_test
+
+
+def get_y_column_from_conf(conf):
+
+    if conf["selected_dataset"] == "diabetic":
+        y = "readmitted"
+    else:
+        logger.error("This dataset do no have any y column or do not exist")
+
+    return y
