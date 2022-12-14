@@ -1,0 +1,6 @@
+*.pyc
+*memo*
+.DS_Store
+*.jpeg
+*.png
+*.log
