@@ -1,0 +1,15 @@
+{
+    "selected_dataset": "diabetic",
+    "path_file": "diabetic.csv",
+    "selected_model": "random_forest",
+    "scoring": "f1",
+    "Inputs_path": "Inputs/",
+    "Outputs_path": "Outputs/",
+    "folder_models": "Models/",
+    "folder_preprocessed": "Preprocessed/",
+    "folder_metrics": "Metrics/",
+    "folder_interpretability": "Interpretability/",
+    "folder_stats": "Statistical_dependance/",
+    "path_log": "params/logs/logs.log",
+    "log_level": "INFO"
+}
