@@ -1,0 +1,22 @@
+{% extends 'home/base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="row">
+	<div class="col-8">		
+		<div class="card shadow mb-4">
+			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+				<h6 class="m-0 font-weight-bold text-primary">Image details - [{{ image.title }}]</h6>   
+			</div>
+			<div class="card-body">
+				{% if image.selected_image %}
+		            <img src="{{ image.selected_image.url }}" width="650" height="300">
+	            {% endif %}
+
+			</div>
+		</div> 	
+	</div> 
+</div> 
+
+
+{% endblock %}

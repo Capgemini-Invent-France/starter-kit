@@ -1,0 +1,35 @@
+{% extends 'home/base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+
+
+<div class="row">
+	<div class="col-5">		
+		<div class="card shadow mb-4">
+			<div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+				<h6 class="m-0 font-weight-bold text-primary">Single image ingestion</h6>   
+			</div>
+			<div class="card-body">
+				
+                <div class="form-group">
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form.as_p }}
+                       
+                        <button class="btn btn-secondary">Add the image</button>
+                    </div>
+                    <br>
+                {% if message %}
+                <h6 class="font-weight-bold text-success"> {{ message }}</h6>
+                {% endif %}
+			    </div>
+		</div> 	
+	</div> 
+</div> 
+
+
+{% endblock %}
