@@ -4,3 +4,10 @@
 *.jpeg
 *.png
 *.log
+.DS_Store
+
+.envrc
+.direnv
+
+*.pyc
+__pycache__
