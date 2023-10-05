@@ -1,0 +1,36 @@
+version: "3.8"
+
+services:
+    api:
+        build: .
+        container_name: django_api
+        volumes:
+            - .:/usr/src/app
+        env_file:
+            - .env
+        ports:
+            - "8000:8000"
+        depends_on:
+            - db
+        networks:
+            - sdstechxnet
+    db:
+        image: postgres
+        restart: always
+        container_name: pgdb
+        environment:
+            POSTGRES_DB: ${DB_NAME}
+            POSTGRES_USER: ${DB_USER}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+        volumes:
+            - ./database/postgres_data:/var/lib/postgresql/data
+        networks:
+            - sdstechxnet
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  sdstechxnet:
+    driver: bridge

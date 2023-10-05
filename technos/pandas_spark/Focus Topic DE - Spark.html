@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Focus Topic DE - Spark </title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="a78b0fe2-c61a-4531-b3ec-0a05db118ee9" class="page sans"><header><h1 class="page-title">Focus Topic DE - Spark </h1><table class="properties"><tbody><tr class="property-row property-row-created_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Created</th><td><time>@December 7, 2022 9:26 PM</time></td></tr><tr class="property-row property-row-last_edited_time"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedAt"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM4.54102 8.91211H7.99316C8.30078 8.91211 8.54004 8.67285 8.54004 8.37207V3.8877C8.54004 3.58691 8.30078 3.34766 7.99316 3.34766C7.69238 3.34766 7.45312 3.58691 7.45312 3.8877V7.83203H4.54102C4.2334 7.83203 4.00098 8.06445 4.00098 8.37207C4.00098 8.67285 4.2334 8.91211 4.54102 8.91211Z"></path></svg></span>Last Edited Time</th><td><time>@December 7, 2022 11:30 PM</time></td></tr><tr class="property-row property-row-select"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Type</th><td></td></tr><tr class="property-row property-row-created_by"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesCreatedBy"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 10.4229C6.05176 10.4229 4.54785 11.1133 3.83008 11.9131C2.90039 10.9082 2.33301 9.55469 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 9.55469 13.1064 10.9082 12.1699 11.9131C11.4521 11.1133 9.94824 10.4229 8 10.4229ZM8 9.30176C9.32617 9.30859 10.3516 8.18066 10.3516 6.71094C10.3516 5.33008 9.31934 4.18164 8 4.18164C6.6875 4.18164 5.6416 5.33008 5.64844 6.71094C5.65527 8.18066 6.68066 9.28809 8 9.30176Z"></path></svg></span>Created By</th><td></td></tr><tr class="property-row property-row-person"><th><span class="icon property-icon"><svg viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesPerson"><path d="M10.9536 7.90088C12.217 7.90088 13.2559 6.79468 13.2559 5.38525C13.2559 4.01514 12.2114 2.92017 10.9536 2.92017C9.70142 2.92017 8.65137 4.02637 8.65698 5.39087C8.6626 6.79468 9.69019 7.90088 10.9536 7.90088ZM4.4231 8.03003C5.52368 8.03003 6.42212 7.05859 6.42212 5.83447C6.42212 4.63843 5.51245 3.68945 4.4231 3.68945C3.33374 3.68945 2.41846 4.64966 2.41846 5.84009C2.42407 7.05859 3.32251 8.03003 4.4231 8.03003ZM1.37964 13.168H5.49561C4.87231 12.292 5.43384 10.6074 6.78711 9.51807C6.18628 9.14746 5.37769 8.87231 4.4231 8.87231C1.95239 8.87231 0.262207 10.6917 0.262207 12.1628C0.262207 12.7974 0.548584 13.168 1.37964 13.168ZM7.50024 13.168H14.407C15.4009 13.168 15.7322 12.8423 15.7322 12.2864C15.7322 10.8489 13.8679 8.88354 10.9536 8.88354C8.04492 8.88354 6.17505 10.8489 6.17505 12.2864C6.17505 12.8423 6.50635 13.168 7.50024 13.168Z"></path></svg></span>Participants</th><td></td></tr></tbody></table></header><div class="page-body"><h2 id="e41fb54e-53f7-4131-8a1d-2c4b0d679b9b" class="">From python notebook data transformation &amp; analytics to industrial big data pipeline</h2><figure id="4102acf4-3a19-4d78-80d9-b499e9f3b885" class="image"><a href="img/DALLE_2022-11-16_10.15.28_-_Digital_art_of_a_pandas_transforming_into_a_spark_data_pipelines.png"><img style="width:1024px" src="img/DALLE_2022-11-16_10.15.28_-_Digital_art_of_a_pandas_transforming_into_a_spark_data_pipelines.png"/></a></figure><p id="6d6a893e-4e2a-4b66-877d-c2cf88c646da" class="">
+</p><h1 id="94f27baa-b224-49bb-bc32-2807200f760e" class="">Intro</h1><h2 id="85b5438c-b554-4927-a3ad-ce0b12502efe" class="">Once upon a time, there was a Panda</h2><figure id="e96ce86a-991c-4dc3-a47b-66eca8510bc6" class="image"><a href="img/DALLE_2022-12-07_21.29.37_-_Digital_art_of_a_panda_eating_small_data_bits.png"><img style="width:1024px" src="img/DALLE_2022-12-07_21.29.37_-_Digital_art_of_a_panda_eating_small_data_bits.png"/></a></figure><ul id="e3e385a6-b5af-4e3e-ad3e-acdfc340a726" class="bulleted-list"><li style="list-style-type:disc">Pandas is a very useful python library for data manipulation with integrated indexing.</li></ul><ul id="7044a59b-7a1f-4726-94e3-df700ce570aa" class="bulleted-list"><li style="list-style-type:disc">Pandas was realeased in 2008</li></ul><ul id="7793168b-67d0-45d6-b4ce-23fd44728038" class="bulleted-list"><li style="list-style-type:disc">All data scientists learn with pandas</li></ul><ul id="a7223d68-1872-4c47-b0fa-c17d5ddae6e2" class="bulleted-list"><li style="list-style-type:disc">Pandas does in memory analytics</li></ul><figure id="cb28688b-2cdc-44ac-b979-599d148e01e0" class="image"><a href="img/Untitled.png"><img style="width:300px" src="img/Untitled.png"/></a></figure><p id="22182852-e346-42ec-b056-8570f5d2bec7" class="">Your typical pandas code</p><pre id="f8344df1-cbae-462c-80d2-a107e97212c4" class="code"><code>import pandas as pd
+
+routes = pd.read_csv(&#x27;routes.csv&#x27;)
+routes = routes.dropna()
+result = (
+	routes[[&#x27;route_distance&#x27;,&#x27;average_air_time&#x27;]]
+	.groupby([&#x27;route_distance&#x27;])
+	.agg({&#x27;average_air_time&#x27;:[&#x27;mean&#x27;, &#x27;median&#x27;,&#x27;max&#x27;,&#x27;min&#x27;]}))
+print(result)</code></pre><figure id="3b220fd9-6af4-4bfa-bded-7e3df446fe38" class="image"><a href="img/DALLE_2022-12-07_21.32.32_-_Digital_art_of_a_panda_in_a_small_rowing_boat.png"><img style="width:1024px" src="img/DALLE_2022-12-07_21.32.32_-_Digital_art_of_a_panda_in_a_small_rowing_boat.png"/></a><figcaption>Smooth ride</figcaption></figure><p id="d70b336f-0dc1-4f07-b163-478fc6d9b103" class="">Until…</p><p id="aff02ed8-4b3e-4fb3-88af-a87eb6a04a92" class=""><code>MemoryError: Unable to allocate 3.39 GiB for an array with shape (8, 56842912) and data type float64</code></p><figure id="02893746-8d94-46e8-9a6c-ed615c655fa9" class="image"><a href="img/DALLE_2022-12-07_21.38.32_-_Digital_art_of_a_huge_panda_looking_at_a_broken_rowing_boat.png"><img style="width:1024px" src="img/DALLE_2022-12-07_21.38.32_-_Digital_art_of_a_huge_panda_looking_at_a_broken_rowing_boat.png"/></a></figure><p id="2ecb25d4-986b-4b46-b96b-f56b4fedb395" class="">But why ? Let’s look at how a computer works.</p><figure id="3cff9431-319f-4943-b4ab-5165e27b46ed" class="image"><a href="img/Untitled%201.png"><img style="width:384px" src="img/Untitled%201.png"/></a></figure><div id="87ecb68d-024f-40e8-a38c-26100f134ba8" class="column-list"><div id="ecda8ace-345c-47a9-9b1f-91586bb0c9e3" style="width:50%" class="column"><figure id="7488820d-e52f-4f6b-8383-41e5279283f7" class="image" style="text-align:left"><a href="img/Untitled%202.png"><img style="width:309px" src="img/Untitled%202.png"/></a></figure></div><div id="c573933a-11e5-4e1f-abc5-c7dabdb53618" style="width:50%" class="column"><table id="28b20a2d-24bf-4723-b46e-72b87be9468c" class="simple-table"><tbody><tr id="6082d0d6-b30b-46ab-b5e5-307824c50f43"><td id="@}&gt;E" class="" style="width:61px"></td><td id="{MZd" class="" style="width:77px">Size</td><td id="L\LY" class="">Transfer</td></tr><tr id="e2572279-8848-4e6c-953b-00d96b39f59c"><td id="@}&gt;E" class="" style="width:61px">L1</td><td id="{MZd" class="" style="width:77px">64 KB</td><td id="L\LY" class="">2 TO/s</td></tr><tr id="3a8dd62a-54c3-48f5-8446-356748fac190"><td id="@}&gt;E" class="" style="width:61px">L2</td><td id="{MZd" class="" style="width:77px">512 KB</td><td id="L\LY" class="">1 TO/s</td></tr><tr id="683ad130-3c57-491e-a4d0-4143201e31a1"><td id="@}&gt;E" class="" style="width:61px">L3</td><td id="{MZd" class="" style="width:77px">3 MB</td><td id="L\LY" class="">500 GB/s</td></tr><tr id="07b371e9-da9e-4cd6-8959-ba85dface031"><td id="@}&gt;E" class="" style="width:61px">RAM</td><td id="{MZd" class="" style="width:77px">16 GB</td><td id="L\LY" class="">20 GB/s</td></tr><tr id="a645c946-c208-4367-8d44-a8dd35fc89a1"><td id="@}&gt;E" class="" style="width:61px">SSD</td><td id="{MZd" class="" style="width:77px">512 GB</td><td id="L\LY" class="">500 MB/S</td></tr><tr id="5980f578-fced-48ad-9e69-5efb709c1408"><td id="@}&gt;E" class="" style="width:61px">HD</td><td id="{MZd" class="" style="width:77px">1 TO</td><td id="L\LY" class="">200 MB/S</td></tr></tbody></table><p id="7ac44edb-66c1-4235-8f6c-fe386b07fdc1" class="">Because if your data does not fit in the RAM, it spills on the disks, where it is 40 to 100 times slower to access.</p><p id="d8139f58-3e94-4301-901b-f486df47d4fb" class="">
+</p></div></div><figure id="8b2b0bbf-9ba6-4bf7-9b7b-ef839f5cc5eb" class="image"><a href="img/DALLE_2022-12-07_21.40.22_-_Digital_art_of_a_panda_thinking_and_having_an_idea_with_yellow_sparks_over_its_head.png"><img style="width:1024px" src="img/DALLE_2022-12-07_21.40.22_-_Digital_art_of_a_panda_thinking_and_having_an_idea_with_yellow_sparks_over_its_head.png"/></a><figcaption>So, why not use several computers ?</figcaption></figure><h2 id="bbbbd0f3-d89e-4f63-bf99-485bcb196d95" class="">Ok, what is Spark ?</h2><figure id="19e94988-a3ec-495b-a445-c6e05f55c3e4" class="image"><a href="img/Untitled%203.png"><img style="width:312px" src="img/Untitled%203.png"/></a></figure><ul id="37af386a-d0d4-4edc-9099-1bbdb4a69d77" class="bulleted-list"><li style="list-style-type:disc">Apache Spark is an open-source unified analytics engine for large scale data <strong>processing</strong></li></ul><ul id="48ab3fd5-8949-42bc-98aa-866dc7bd484a" class="bulleted-list"><li style="list-style-type:disc">Spark was realeased in 2014</li></ul><ul id="e4e227a0-1d37-4522-817b-82d83956b412" class="bulleted-list"><li style="list-style-type:disc">Spark is written in Scala and provides API in Scalar, Java, R, Python</li></ul><ul id="e9415f8b-3e4b-4f72-95b5-37e044336ebe" class="bulleted-list"><li style="list-style-type:disc">Spark usually relies on HDFS (Hadoop Distributed File System) for data storage</li></ul><ul id="b88cefeb-f12d-4319-987d-fb2ee3a77ef6" class="bulleted-list"><li style="list-style-type:disc">Spark in-memory processing is a revolution compared to MapReduce</li></ul><h2 id="4710c0c3-6c4d-48d1-b9c4-705740a35404" class="">Wait a minute, what is HDFS &amp; MapReduce ?</h2><ul id="82ab4b2a-1e64-4a38-87a8-e5175819785b" class="bulleted-list"><li style="list-style-type:disc">HDFS is about distributed <strong>storage</strong><ul id="e585c272-be6d-4ad1-bba9-fed3e79aac90" class="bulleted-list"><li style="list-style-type:circle">Data distributed across several nodes</li></ul><ul id="9543b6a4-76b7-487f-8300-bac324016d9c" class="bulleted-list"><li style="list-style-type:circle">Resilisent, data is replicated</li></ul><ul id="d03b3e70-c8e0-487e-9b6e-10ba489d8de3" class="bulleted-list"><li style="list-style-type:circle">Most popluar HDFS frameworks:<figure id="d6446e2a-ee84-4302-afd5-a7ed867e1552" class="image"><a href="img/Untitled%204.png"><img style="width:240px" src="img/Untitled%204.png"/></a><figcaption>Column-oriented </figcaption></figure><figure id="495140a9-4c96-4a4b-87f2-93f7a7088f72" class="image"><a href="img/Apache_Avro_Logo.svg.png"><img style="width:240px" src="img/Apache_Avro_Logo.svg.png"/></a><figcaption>Row-oriented</figcaption></figure><figure id="0136a5bb-c60e-4dd3-99e2-44023bf18530" class="image"><a href="img/Untitled%205.png"><img style="width:838px" src="img/Untitled%205.png"/></a><figcaption>Column-oriented storage is much more optimized for computation</figcaption></figure></li></ul></li></ul><ul id="4e83a706-1207-4eb2-938f-0aa339126c49" class="bulleted-list"><li style="list-style-type:disc">MapReduce is about distributed <strong>processing</strong><ul id="849e127c-3ae7-4a63-a4c0-a059ed6afb51" class="bulleted-list"><li style="list-style-type:circle">Map is about distributing work to worker nodes </li></ul><ul id="bee04e98-3da1-4a05-99bb-9cd3c1029d85" class="bulleted-list"><li style="list-style-type:circle">Shuffle is about exchanging data betweed nodes</li></ul><ul id="eb0e44a3-864d-4f7c-98d2-7a9f55802c78" class="bulleted-list"><li style="list-style-type:circle">Reduce is about getting the results from workers</li></ul></li></ul><figure id="d1200c15-8cc8-4b9e-bfa1-5017f183e1f4" class="image"><a href="img/Untitled%206.png"><img style="width:930px" src="img/Untitled%206.png"/></a></figure><h2 id="b8a6b15a-0af3-4a51-80d6-8b81bea44f1d" class="">Back to Spark</h2><figure id="3390533a-7ba4-449b-b5d9-73a255e7e05b" class="image"><a href="img/Untitled%207.png"><img style="width:596px" src="img/Untitled%207.png"/></a></figure><ul id="08cb0532-ea5f-4244-95b8-0f35433e45a0" class="bulleted-list"><li style="list-style-type:disc">Apache Spark is an open-source unified analytics engine for large scale data <strong>processing</strong></li></ul><ul id="b11a5840-de2c-437f-959f-0cd0a8456ca8" class="bulleted-list"><li style="list-style-type:disc">Spark was realeased in 2014</li></ul><ul id="c4412dc3-ab14-467a-ba39-248a2c1a02c0" class="bulleted-list"><li style="list-style-type:disc">Spark is written in Scala and provides API in Scalar, Java, R, Python</li></ul><ul id="118bb666-d5a7-44f7-bcf8-e16dbc9a3083" class="bulleted-list"><li style="list-style-type:disc">Spark usually relies on HDFS (Hadoop Distributed File System) for data storage</li></ul><ul id="7164ffad-33b0-4f92-83ea-206faed82a2e" class="bulleted-list"><li style="list-style-type:disc">Spark in-memory processing is a revolution compared to MapReduce</li></ul><h3 id="48804ce6-a44b-44a0-ab2b-2781beeab3c5" class="">Key points about Spark</h3><ul id="e9d4e1a1-0172-4aeb-9cd0-f14e8d1231c9" class="toggle"><li><details open=""><summary>Sparks needs a dedicated infrastructure to run on</summary><ul id="044fa265-48b5-4665-afb0-c2d6b058afe9" class="bulleted-list"><li style="list-style-type:disc">GCP - Dataproc</li></ul><ul id="d0e7fd72-37c2-4763-a8d7-271ca2477016" class="bulleted-list"><li style="list-style-type:disc">ASW - Amazon EMR</li></ul><ul id="46bd8b13-4bf8-471b-ad54-bc4578d766c3" class="bulleted-list"><li style="list-style-type:disc">Azure Spark</li></ul><ul id="4704e993-95be-4260-a202-790784f8148f" class="bulleted-list"><li style="list-style-type:disc">Palantir Foundry data pipeline are a managed Spark cluster</li></ul><ul id="b62f4bb7-e52d-4fc6-aab9-86df48ca32ac" class="bulleted-list"><li style="list-style-type:disc">Databricks is a managed spark cluster</li></ul></details></li></ul><ul id="deea4f1d-9770-4357-95df-21290955ab00" class="toggle"><li><details open=""><summary>Spark is lazy</summary><ul id="e1cba12e-a678-4af8-8ae8-38d6405990b2" class="bulleted-list"><li style="list-style-type:disc">meaning that it will only compute when a result is needed</li></ul></details></li></ul><ul id="38ae0896-b3f8-4ac6-8edd-63f6da437620" class="toggle"><li><details open=""><summary>Spark driver or executors can run out of memory</summary><ul id="b5f72015-ff01-4fb7-b5e8-d9d23cbccd2e" class="bulleted-list"><li style="list-style-type:disc">Yes, Spark is still RAM intensive. If not partitionned well and/or if code not optimized, out of memory can happen</li></ul></details></li></ul><ul id="c341ebaa-fe4a-461f-9416-b6434da0a8bc" class="toggle"><li><details open=""><summary>Spark is less performant than Pandas for small files</summary><ul id="d36cb0a9-fe8c-4b15-8c6d-c0a6ed053354" class="bulleted-list"><li style="list-style-type:disc">Communication costs</li></ul></details></li></ul><ul id="7b7a3f4d-437c-4cd5-adf9-4b8815909eda" class="toggle"><li><details open=""><summary>It is way more performant to compute a column median than a column average in Spark</summary><ul id="570391b8-ad85-47a2-a7f7-ecf9d6b78bf8" class="bulleted-list"><li style="list-style-type:disc">Average operation is commutative, median is not</li></ul></details></li></ul><ul id="624b2762-0ab2-4e3b-8557-0c958468d514" class="toggle"><li><details open=""><summary>Partitionning has a big impact on Spark performances</summary><ul id="c5c409de-8002-497f-b830-9d5487981214" class="bulleted-list"><li style="list-style-type:disc">Communication costs (Shuffling)</li></ul></details></li></ul><ul id="4f8eafec-2c3b-40aa-9ad3-5eda902de9f3" class="toggle"><li><details open=""><summary>Sorting partitions can improve Spark performances</summary><ul id="0b3ae764-708e-41a9-a6e6-6e5d1112c598" class="bulleted-list"><li style="list-style-type:disc">Communication costs (Shuffling)</li></ul></details></li></ul><p id="89e6bc7c-3601-4aa4-b521-0ebcaac1ddb7" class="">
+</p><p id="4f89d62e-64ed-4375-810d-32bcd0fb0f9a" class="">Just before we finish</p><ul id="e9ea886c-ce6a-4c7c-9727-321b2aed8c8d" class="bulleted-list"><li style="list-style-type:disc">Spark is usually used for batch computing, but Spark Streaming exists</li></ul><ul id="657bb602-abe3-494c-82e5-2ec6a633b13b" class="bulleted-list"><li style="list-style-type:disc">Spark supports incremental data loading</li></ul><ul id="02f412f0-c9fb-4dfe-b853-424056348d56" class="bulleted-list"><li style="list-style-type:disc">Spark ML is the distributed scikit learns, with much less features, but scalable !</li></ul><ul id="2fd310d8-5008-481f-a84d-d60f2b26413a" class="bulleted-list"><li style="list-style-type:disc">GraphX is a dedicated graph module in Spark for distributed graph processing</li></ul><h1 id="0419c65e-49d8-4757-8f45-b91dee5d5fd3" class="">Demo time</h1><figure id="9db17c2f-c45b-4d06-a867-aed8a9bd279c" class="image"><a href="img/DALLE_2022-12-07_21.42.12_-_Digital_art_of_an_orange_star_with_yellow_sparks_defeating_a_panda.png"><img style="width:1024px" src="img/DALLE_2022-12-07_21.42.12_-_Digital_art_of_an_orange_star_with_yellow_sparks_defeating_a_panda.png"/></a><figcaption>Great idea ! </figcaption></figure><p id="a83ecc39-b9d8-4e35-8499-0547ee5a6ab5" class="">
+</p><ul id="2c261b9b-a242-4359-8d71-5fc9cf37d90b" class="bulleted-list"><li style="list-style-type:disc">Example of a typical Pandas pipeline, transfo &amp; analytics, up to the point that it fails</li></ul><ul id="7dfc3a1a-39cf-4f5d-9f88-c307cb616c0d" class="bulleted-list"><li style="list-style-type:disc">Exemple of a failed Pandas processing on Palantir Foundry</li></ul><ul id="413ad293-e885-4320-986a-f7d6005bea92" class="bulleted-list"><li style="list-style-type:disc">Translation to Spark, it works ! <ul id="b2796afe-8e73-4a94-ab4f-a9a629267eda" class="bulleted-list"><li style="list-style-type:circle">Show file partitions</li></ul><ul id="5841b554-5338-47a9-88e1-842fd5fe644d" class="bulleted-list"><li style="list-style-type:circle">Show job analysis</li></ul></li></ul><ul id="9a0b4b82-40d7-46a1-863d-7ea22d699f20" class="bulleted-list"><li style="list-style-type:disc">Demo of a real data lineage (Stellantis or WFP)</li></ul><p id="8aecca29-d380-49dc-9938-a00087da8106" class="">
+</p><p id="1b225f0e-ee9e-4751-a80d-d45171410cc8" class="">
+</p><h2 id="805d01c5-40fc-4463-b37b-f990ba22a5ac" class="">Tips</h2><figure id="02bdd256-9cdb-44ad-b84f-d8e7506fe25b" class="image"><a href="img/Untitled%208.png"><img style="width:906px" src="img/Untitled%208.png"/></a></figure><p id="706ed6be-7100-4d0c-a5d9-16bf8e96d0b5" class="">
+</p></div></article></body></html>
