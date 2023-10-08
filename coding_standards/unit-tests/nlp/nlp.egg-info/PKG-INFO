@@ -1,0 +1,6 @@
+Metadata-Version: 2.1
+Name: nlp
+Version: 0.0.1
+Author: thibaultVenet
+Author-email: thibault.venet@capgemini.com
+Requires-Python: >=3.7
